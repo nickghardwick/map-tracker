@@ -25,10 +25,12 @@ userSchema.pre('save', function(next) {
         };
 
         bcrypt.hash(user.password, salt, function(err, hash) {
-            return next(err);
+            if (err) {
+                return next(err);
+            }
+            user.password = hash;
+            next();
         });
-        user.password = hash;
-        next();
     });
 });
 
