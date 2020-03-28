@@ -12,6 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(authRoutes);
 app.use(trackRoutes);
+mongoose.set('useUnifiedTopology', true);
 
 const mongoURI = 'mongodb+srv://nick:Nickhard1@cluster0-w19ph.azure.mongodb.net/test?retryWrites=true&w=majority'
 mongoose.connect(mongoURI, {
