@@ -25,7 +25,7 @@ mongoose.connection.on('error', (err) => {
     console.error('Error connecting to MongoDB instance', err);
 });
 
-app.get('/', requireAuth,(req, res) => {
+app.get('/', requireAuth, (req, res) => {
     res.send(`Your email is: ${req.user.email}`);
 });
 
