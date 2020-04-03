@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import AuthForm from '../components/AuthForm';
 import NavLink from '../components/NavLink';
+import {Context} from '../context/AuthContext';
 
 let SigninScreen = function() {
+    let {state, signin} = useContext(Context);
+
     return (
         <View style={styles.container}>
             <AuthForm
                 headerText="Sign In to your Account"
-                errorMessage=""
-                onSubmit={() => {}}
+                errorMessage={state.errorMessage}
+                onSubmit={signin}
                 submitButtonText="Sign In"
             />
             <NavLink
@@ -24,7 +27,7 @@ SigninScreen.navigationOptions = {
     headerShown: false,
 };
 
-const styles = StyleSheet.create({
+let styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
