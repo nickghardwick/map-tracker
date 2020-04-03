@@ -23,10 +23,8 @@ let SignupScreen = function({navigation}) {
     );
 };
 
-SignupScreen.navigationOptions = () => {
-    return {
-        headerShown: false,
-    };
+SignupScreen.navigationOptions = {
+    headerShown: false,
 };
 
 let styles = StyleSheet.create({
