@@ -7,6 +7,7 @@ import Map from '../components/Map';
 import {Context as LocationContext} from '../context/LocationContext';
 import useLocation from '../hooks/useLocation';
 import TrackForm from '../components/TrackForm';
+import {FontAwesome} from '@expo/vector-icons';
 
 let TrackCreateScreen = function({isFocused}) {
     const {state: {recording}, addLocation} = useContext(LocationContext);
@@ -23,6 +24,11 @@ let TrackCreateScreen = function({isFocused}) {
             <TrackForm />
         </SafeAreaView>
     );
+};
+
+TrackCreateScreen.navigationOptions = {
+    title: 'Add Track',
+    tabBarIcon: <FontAwesome name="plus" size={20} />,
 };
 
 const styles = StyleSheet.create({});
