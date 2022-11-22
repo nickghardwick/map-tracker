@@ -11,7 +11,7 @@
     "@react-native-community/masked-view": "^0.1.5",
     "axios": "^0.21.2",
     "expo": "~36.0.0",
-    "expo-cli": "^3.17.21",
+    "expo-cli": "^6.0.8",
     "expo-location": "~8.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
